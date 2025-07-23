@@ -1,0 +1,15 @@
+.cursor{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: fixed;
+    background-color: black;
+}
+.follower-cursor{
+    width: 30px ;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid black;
+    position: fixed;
+    z-index: 1001;
+}

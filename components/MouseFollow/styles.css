@@ -1,0 +1,11 @@
+.cursor {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle at var(--clientX, 50%) var(--clientY, 50%),
+    rgba(255, 255, 255, 0.068),
+    transparent 150px
+  );
+  transition: background-position 0.1s ease;
+}

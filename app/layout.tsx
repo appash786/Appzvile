@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import NavBar from "@/components/NavBar/NavBar";
+import LenisProvider from "@/components/LenisProvider";
+import MouseFollowLight from "@/components/MouseFollow/MouseFollowLight";
+const poppins = Poppins({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "700"], // Choose the weights you need
+  variable: "--font-poppins", // Optional: for CSS variable usage
 });
 
 export const metadata: Metadata = {
@@ -24,11 +22,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${poppins.variable} antialiased`}>
+        
+        
+        <LenisProvider>
+          <NavBar />
+          <MouseFollowLight />
+          {children}
+        </LenisProvider>
+        </body>
     </html>
   );
 }
