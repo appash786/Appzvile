@@ -23,10 +23,10 @@ const Description = () => {
   }, []);
 
   return (
-    <div ref={descRef} className='h-[50vh]  flex flex-col items-center   w-full '>
+    <div ref={descRef} id='About' className='xl:h-[50vh] border-b border-t mt-6 flex flex-col   py-5    w-full '>
       {show && (
-        <div className='w-2/4  text-center' >
-            <TextGenerateEffect className={'text-3xl'} words={words} />
+        <div className='xl:w-2/4 px-1 text-center' >
+            <TextGenerateEffect className={'xl:text-3xl text-xl'} words={words} />
         </div>
       )}
     </div>

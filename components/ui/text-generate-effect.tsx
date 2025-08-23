@@ -24,7 +24,7 @@ export const TextGenerateEffect = ({
         filter: filter ? "blur(0px)" : "none",
       },
       {
-        duration: duration ? duration : 1,
+        duration: duration ? duration : .1,
         delay: stagger(0.2),
       }
     );
@@ -53,7 +53,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-bold", className)}>
       <div className="mt-4">
-        <div className=" dark:text-white text-black text-4xl leading-snug tracking-wide">
+        <div className=" dark:text-white text-black xl:text-4xl leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>

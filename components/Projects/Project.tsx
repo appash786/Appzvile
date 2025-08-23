@@ -60,9 +60,9 @@ const Project = () => {
 
 
     return (
-        <section className='w-full h-[90vh] grid grid-cols-10 mt-10'>
+        <section id='service' className='w-full xl:h-[90vh] grid xl:grid-cols-10 grid-cols-1 xl:mt-10 mt-15'>
             {/* left section */}
-            <div ref={containerLeft} className='col-span-5 relative flex-col border-r    border-white/20  flex'>
+            <div ref={containerLeft} className='xl:col-span-5  px-3 col-span-1 relative flex-col xl:border-r    border-white/20  flex'>
                 <div ref={titleRef} className='relative inline-block w-full'>
                     {phrase.map((phrases, index) => (
 
@@ -72,21 +72,37 @@ const Project = () => {
                     ))}
                 </div>
 
-                <div className='min-h-[580px] border-b border-white/20 px-3 flex justify-center relative w-full'>
-                    <div className="relative  w-full h-[300px] flex justify-center mt-20">
+                <div className='xl:min-h-[580px] xl:border-b border-white/20 xl:px-3 px-1 flex justify-center relative w-full'>
+                    <div className="relative  w-full h-[300px]  flex justify-center mt-20">
                         <Vs />
                     </div>
                 </div>
             </div>
+            {/* <div ref={containerLeft} className='xl:col-span-5  px-3 col-span-1 relative flex-col xl:border-r    border-white/20  flex'>
+                <div ref={titleRef} className='relative inline-block w-full'>
+                    {phrase.map((phrases, index) => (
+
+                        <AnimatedText key={index} color={phrases.color}>
+                            {phrases.text}
+                        </AnimatedText>
+                    ))}
+                </div>
+
+                <div className='xl:min-h-[580px] xl:border-b border-white/20 xl:px-3 px-1 flex justify-center relative w-full'>
+                    <div className="relative  w-full h-[300px] flex justify-center mt-20">
+                        <Vs />
+                    </div>
+                </div>
+            </div> */}
 
             {/* right section */}
             <div className='col-span-5 flex'>
                 <div className='relative mt-30 border-t   border-white/50  p-5 w-full'>
-                    <p ref={subtitleRef} className='text-2xl  w-3/4 p-5 blurBg font'>
-                        Pixel-Perfect Across Devices. Optimized to Rank High.<br />
+                    <p ref={subtitleRef} className='xl:text-2xl  w-3/4 p-5 blurBg font'>
+                       Crafted for performance. Designed to convert.<br />
                     </p>
-                    <div ref={itemsRef} className='min-h-[550px]  mt-12  relative w-full'>
-                        <First />
+                    <div ref={itemsRef} className='min-h-[550px] w-3/4  mt-22  relative'>
+                        <p className='text-2xl text-white/60 '>From the first line of code to the final pixel, every element is engineered for speed, clarity, and impact. Your site won’t just load fast — it’ll deliver a seamless experience that keeps visitors engaged and turns clicks into customers.</p>
                     </div>
                 </div>
             </div>
@@ -111,7 +127,7 @@ type AnimatedTextProps = {
     color?: string;
 };
 
-function AnimatedText({ children, color }: AnimatedTextProps) {
+export function AnimatedText({ children, color }: AnimatedTextProps) {
     const textRef = useRef<HTMLParagraphElement>(null);
 
     useLayoutEffect(() => {
@@ -129,6 +145,7 @@ function AnimatedText({ children, color }: AnimatedTextProps) {
             autoAlpha: 0,
             duration: 1,
             ease: "power2.out",
+            
         });
 
         return () => {
@@ -138,7 +155,7 @@ function AnimatedText({ children, color }: AnimatedTextProps) {
     }, []);
 
     return (
-        <p ref={textRef} className={`text-${color} text-5xl font-bold my-4`}>
+        <p ref={textRef} className={`text-${color} xl:text-5xl text-3xl font-bold my-`}>
             {children}
         </p>
     );

@@ -10,7 +10,7 @@ export default function MouseFollowLight() {
     gsap.to(cursorRef.current, {
       x: e.clientX,
       y: e.clientY,
-      duration: 0.3,
+      duration: .6,
     });
   };
 
@@ -52,10 +52,10 @@ export default function MouseFollowLight() {
   }, []);
 
   return (
-    <div className="z-[1000] cursor pointer-events-none fixed top-0 left-0">
+    <div className="z-[1000] xl:flex hidden cursor pointer-events-none fixed top-0 left-0">
       <div
         ref={cursorRef}
-        className="border border-2 border-white w-10 h-10 rounded-full transition-colors duration-200"
+        className="border border-2 border-white w-5 h-5 rounded-full transition-colors duration-200"
       ></div>
     </div>
   );

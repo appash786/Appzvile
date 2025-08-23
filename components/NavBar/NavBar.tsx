@@ -25,13 +25,14 @@ const NavBar = () => {
         <section className='relative'>
             <nav
                 ref={navRef}
-                className='w-full navbar z-[1000] fixed text-white xl:px-60 xl:p-6 p-3 flex justify-between items-center'
+                className='w-full navbar z-[1000] opacity-0 fixed text-white xl:px-60 xl:p-6 p-3 flex justify-between items-center'
             >
                 <div className='xl:text-3xl text-amber-50 font-bold'>AppzVile</div>
                 <div className='hidden xl:flex gap-6' >
-                    <a href="#" className='px-4 opacity-70 xl:text-xl'>Home</a>
-                    <a href="#" className='px-4 opacity-70 xl:text-xl'>About</a>
-                    <a href="#" className='px-4 opacity-70 xl:text-xl'>Contact</a>
+                    <a href="#Home" className='px-4 opacity-70 xl:text-xl'>Home</a>
+                    <a href="#About" className='px-4 opacity-70 xl:text-xl'>About</a>
+                    <a href="#service" className='px-4 opacity-70 xl:text-xl'>Services</a>
+                    <a href="#contact" className='px-4 opacity-70 xl:text-xl'>Contact</a>
                 </div>
                 <div className='text-lg font-bold hidden xl:flex'>MyApp</div>
                 <div className='flex xl:hidden'>

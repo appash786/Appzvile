@@ -11,3 +11,28 @@
     background-color: rgba(240, 248, 255, 0.219);
 
 }
+.SeoMobile {
+background: #2A7B9B;
+background: linear-gradient(118deg,rgba(42, 123, 155, 1) 0%, rgba(58, 56, 56, 0.822) 0%, rgba(110, 110, 110, 0.301) 100%);
+
+
+}
+.innerSeoMobile{
+    /* background: #fafcff; */
+    background: linear-gradient(-90deg,rgba(42, 123, 155, 0) 0%, rgb(255, 255, 255)0%, rgba(3, 1, 15, 0.336) 0%);
+
+}
+.innerContainer{
+    background: #060c18;
+    background: linear-gradient(118deg,rgba(42, 123, 155, 1) 0%, rgba(78, 77, 77, 0.71) 0%, rgba(3, 1, 15, 0.63) 100%);
+}
+.gradientLayer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%; /* or adjust like 50% */
+  z-index: 10;
+  background: linear-gradient(to top, rgba(7, 5, 24, 0.897), transparent);
+  pointer-events: none; /* ensures it doesn’t block clicks */
+}

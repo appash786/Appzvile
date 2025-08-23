@@ -84,7 +84,7 @@ const VsCode = () => {
        
           stagger: 0.1,
           duration: 0.8,
-          ease: "power3.out", markers: true,
+          ease: "power3.out", markers: false,
         });
       }
     });
@@ -122,8 +122,10 @@ const VsCode = () => {
             rounded-xl
             shadow-2xl
             border border-white/10
-            w-[500px] max-w-full
-            h-[340px]
+            xl:w-[500px] max-w-full
+            w-[250px]
+            h-[200px]
+            xl:h-[340px]
             overflow-hidden
             transition-all
             duration-500
@@ -152,7 +154,7 @@ const VsCode = () => {
           <ContainerShade/>
          
           {/* Code area */}
-          <pre className="flex-1 font-mono text-white text-lg px-6 py-6 whitespace-pre leading-relaxed select-none">
+          <pre className="flex-1 font-mono text-white xl:text-lg text-xs px-6 py-6 whitespace-pre leading-relaxed select-none">
             {snippet}
           </pre>
         </div>
