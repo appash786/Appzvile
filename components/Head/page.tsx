@@ -4,11 +4,14 @@ import Image from 'next/image'
 import React from 'react'
 import Alogo from '@/public/assets/intro/Logo/LogoA.png'
 import Blogo from '@/public/assets/intro/Logo/LogoV.png'
+import gsap from 'gsap'
+    
 import { useRef, useLayoutEffect } from 'react';
 const page = () => {
     const introImage = useRef(null);
     const light = useRef(null);
     const container = useRef(null);
+
 
     return (
         <>
@@ -17,9 +20,9 @@ const page = () => {
             </div>
             <section className='w-full h-[90vh] flex flex-col xl:gap-6 justify-end relative '>
                 {/* Content */}
-                <div className='w-full h-1/2 flex justify-center items-end '>
+                <div className='w-full h-1/2 flex justify-center relative items-end '>
 
-                    <div className='w-[500px] xl:scale-80 scale-40 flex justify-center items-center    relative h-[120px]'>
+                    <div className='w-[500px]  xl:scale-80 scale-30 flex justify-center items-center    absolute h-[120px]'>
                         <Image src={Alogo} alt="Hero" className=" absolute" width={500} height={274} priority />
                         <Image src={Blogo} alt="Hero" className=" absolute" width={500} height={274} priority />
                     </div>

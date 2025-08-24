@@ -15,18 +15,18 @@ import BeforeAfter from "@/components/BeforeAfter/BeforeAfter";
 export default function Home() {
   return (
     <main className="xl:px-70 py-12">
-      <Head/>
-          
-          {/* <Description/> */}
-          <Seo/>
-          <BeforeAfter/>
-          <Project/>
-          {/* <WhatIdo/> */}
-          <Cta/>
-          <Footer/>
-          
-    
-   
+      <Head />
+
+
+      <Seo />
+      <BeforeAfter />
+      <Project />
+      {/* <WhatIdo/> */}
+      <Cta />
+      <Footer />
+
+
+
     </main>
 
   );
