@@ -57,19 +57,19 @@ const BeforeAfter = () => {
   }, [])
 
   return (
-    <section className='w-full h-[100vh] relative flex items-center justify-center'>
+    <section className='w-full xl:h-[100vh] xl:mb-0 mb-40  relative flex items-center justify-center'>
 
                     
 
 
-      <div ref={laptopRef} className='relative w-[1000px] h-auto'>
-        <div  ref={subtitleRef}  className=' absolute z-[999] translate-y-20 translate-x-[-180px]'>
-                                <p  className='xl:text-xl   w-[400px] p-4 blurBg font'>
+      <div ref={laptopRef} className='relative w-full xl:w-[1000px] h-auto'>
+        <div  ref={subtitleRef}  className='xl:flex hidden absolute z-[999] xl:translate-y-20 xl:translate-x-[-180px]'>
+                                <p  className='xl:text-xl   xl:w-[400px] p-4 blurBg font'>
                        A silent page collecting dust, ignored by both Google and your customers.<br />
                     </p>
         </div>
-        <div  ref={subtitleRef2} className='absolute z-[999] bottom-30 right-[-140px]'>
-                                <p  className='xl:text-xl   w-[400px] p-4 blurBg font'>
+        <div  ref={subtitleRef2} className='xl:flex hidden absolute z-[999] bottom-30 xl:right-[-140px]'>
+                                <p  className='xl:text-xl   xl:w-[400px] p-4 blurBg font'>
                      A magnetic brand hub — visible, trusted, and built to convert every click.<br />
                     </p>
         </div>
@@ -85,13 +85,8 @@ const BeforeAfter = () => {
 
         {/* Slider container absolutely positioned to match the screen area */}
         <div
-          className='absolute z-20 rounded-lg overflow-hidden'
-          style={{
-            top: '59px',
-            left: '170px',
-            width: '655px',
-            height: '455px'
-          }}
+          className='absolute z-20 xl:w-[655px] xl:h-[455px] xl:top-[59px] xl:left-[170px] top-7 left-18 bg-amber-500 w-[67vw] h-auto xl:rounded-lg overflow-hidden'
+     
         >
           <ReactCompareImage
             leftImage={BeforeImg.src}

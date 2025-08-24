@@ -3,6 +3,7 @@ import React, { useEffect, useRef ,useState } from 'react'
 import { TypewriterEffectSmooth } from '../ui/typewriter-effect'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { isMotionValue } from 'motion'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -14,73 +15,74 @@ const SeoPhone = () => {
     const phoneRef = useRef(null)
 
     const searchResults = [
-        { title: "Your Company" }, { title: "Oakridge Builders" },
+        { title: "Your website" }, { title: "Oakridge Builders" },
         { title: "Laveta Fashion" }, { title: "BrightNest Consulting" },
         { title: "Greenspade Organics" }, { title: "Coastline Escapes" }
     ]
 
-    const words = [{ text: 'Your Company', className: 'text-2xl items-center font-medium' }]
+    const words = [{ text: searchResults[0].title , className: 'text-2xl items-center font-medium' }]
 
-    useEffect(() => {
-        const checkMobile = () =>{
-            setIsMobile(window.innerWidth <= 786);
-        };
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        const items = containerRef.current.querySelectorAll(".search-item")
-        
-        gsap.fromTo(
-            items,
-            { x: 90, scale:1.5 , opacity: 0 },
-            {
-                x: 0,
-                opacity: 1,
-                scale: 1 ,
+useEffect(() => {
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth <= 786);
+  };
+  checkMobile();
+  window.addEventListener("resize", checkMobile);
 
-                rotateY: -5,
-                rotateX: -15,
-                stagger: 0.3,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: phoneRef.current,
-                    start: 'top +=500',
-                    end: 'bottom 10%',
-                    scrub: true, // or false if you want a one-time scroll animation
-                    markers: false,
-                    // once: true // if you want animation to run only once
-                    onEnter: () => {
-                        gsap.to(firstRef.current, {
-                            backgroundColor: '#22c55e',
-                            delay:2,
-                            duration: 1,
-                            ease: 'power2.out',
-                        });
-                    }
-                },
-            }
-        )
+  const items = containerRef.current.querySelectorAll(".search-item");
 
-        // ScrollTrigger 3D tilt
-        gsap.to(phoneRef.current, {
-            scrollTrigger: {
-                trigger: phoneRef.current,
-                start: 'top +=600',
-                end: 'bottom ',
-                scrub: true,
-                markers: false,
-            },
-            y:-40,
-            rotateY: -20,
-            rotateX: -10,
-            scale: isMobile? '.4': '.5',
-            ease: 'power2.out',
-            transformOrigin: 'center center',
-        
-        })
+  gsap.fromTo(
+    items,
+    { x: 90, scale: 1.5, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      rotateY: -5,
+      rotateX: -15,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: phoneRef.current,
+        start: "top +=500",
+        end: "bottom 10%",
+        scrub: true,
+        markers: false,
+        onEnter: () => {
+          gsap.to(firstRef.current, {
+            backgroundColor: "#22c55e",
+            delay: 2,
+            duration: 1,
+            ease: "power2.out",
+          });
+        },
+      },
+    }
+  );
 
+  // Watch isMobile dynamically
+  const phoneAnim = gsap.to(phoneRef.current, {
+    scrollTrigger: {
+      trigger: phoneRef.current,
+      start: "top +=900",
+      end: "bottom",
+      scrub: true,
+      markers: false,
+    },
+    y: -40,
+    rotateY: -20,
+    rotateX: -10,
+    scale: isMobile  ? 0.9 : 0.8, // directly check
+    ease: "power2.out",
+    transformOrigin: "center center",
+  });
 
-        return () => window.removeEventListener("resize", checkMobile);
-    }, [])
+  return () => {
+    window.removeEventListener("resize", checkMobile);
+    phoneAnim.scrollTrigger.kill(); // cleanup GSAP
+  };
+}, [isMobile]); // add isMobile as dependency
+
 
     return (
         <div className='w-full  flex  justify-center '>
@@ -95,7 +97,7 @@ const SeoPhone = () => {
                         </h3>
                         <div className='w-[90%] mt-4 SeoMobile h-14 p-[3px] rounded-2xl'>
                             <div className='flex gap-3 innerSeoMobile rounded-2xl px-3 w-full h-full items-center'>
-                                <SearchIcon />
+                                <SearchIcon color='white' />
                                 <TypewriterEffectSmooth words={words} />
                             </div>
                         </div>

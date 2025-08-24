@@ -39,21 +39,21 @@ const VantaHalo = () => {
   }, [vantaEffect]);
 
   useEffect(() => {
-    if (vantaRef.current) {
-      gsap.to(vantaRef.current, {
-        filter: 'blur(50px) brightness(80%) ',
-        duration: 1,
-        y: 100,
-        // You can tweak this
-        scrollTrigger: {
-          trigger: document.body,
-          start: 'top ',
-          end: 'bottom bottom',
-          scrub: true,
-          markers: false,
-        },
-      });
-    }
+    // if (vantaRef.current) {
+    //   gsap.to(vantaRef.current, {
+    //     filter: 'blur(50px) brightness(80%) ',
+    //     duration: 1,
+    //     y: 50,
+    //     // You can tweak this
+    //     scrollTrigger: {
+    //       trigger: document.body,
+    //       start: 'top -=10 ',
+    //       end: 'bottom +=100',
+    //       scrub: true,
+    //       markers: false,
+    //     },
+    //   });
+    // }
   }, []);
 
   return (
@@ -63,7 +63,7 @@ const VantaHalo = () => {
         className="w-full h-screen z-[-1] object-contain fixed xl:top-[-150px] top-[-110px]  t xl:left-0"
         style={{
           background: '0x060616',
-          filter: 'blur(0px) brightness(70%) ', // Start with no blur
+          filter: 'blur(40px) brightness(70%) ', // Start with no blur
           transition: 'filter 0.3s ease',
         }}
       />

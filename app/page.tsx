@@ -1,4 +1,5 @@
 import Intro from "@/components/intro/Intro";
+import Head from '@/components/Head/page'
 import Image from "next/image";
 import Project from "@/components/Projects/Project";
 import Description from "@/components/description/Description";
@@ -14,15 +15,15 @@ import BeforeAfter from "@/components/BeforeAfter/BeforeAfter";
 export default function Home() {
   return (
     <main className="xl:px-70 py-12">
-      
-          <Intro/>
+      <Head/>
+          
           {/* <Description/> */}
-          {/* <Seo/> */}
-          {/* <BeforeAfter/>
+          <Seo/>
+          <BeforeAfter/>
           <Project/>
-          <WhatIdo/>
+          {/* <WhatIdo/> */}
           <Cta/>
-          <Footer/> */}
+          <Footer/>
           
     
    

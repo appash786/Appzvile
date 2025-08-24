@@ -2,8 +2,8 @@ import React from 'react';
 import './Styles.css'
 const Footer = () => {
   return (
-    <footer className="FooterBg rounded-xl mt-30 text-gray-300 px-6 py-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="FooterBg xl:rounded-xl xl:mt-30 mt-12 w-full  text-gray-300 px-6 py-10">
+      <div className="max-w-7xl mx-auto  grid grid-cols-1 md:grid-cols-3 gap-8">
         
         {/* Logo and Intro */}
         <div>

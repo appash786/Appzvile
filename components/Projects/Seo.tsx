@@ -23,13 +23,19 @@ const Seo = () => {
     useEffect(() => {
         const checkMobile = () => {
             setIsMobile(window.innerWidth <= 786);
+            
         };
         checkMobile();
-        window.addEventListener('resize', checkMobile);
-    })
+        if (isMobile) {
+            console.log("mobile")
+        } else {
+            console.log("not mobile")
+        }
+        window.addEventListener("resize", checkMobile);
+    },[isMobile])
 
     useLayoutEffect(() => {
-        
+
         const ctx = gsap.context(() => {
             // 📌 Pin left section for ~4s of scroll distance
             if (containerLeft.current) {
@@ -37,10 +43,10 @@ const Seo = () => {
                 ScrollTrigger.create({
                     trigger: containerLeft.current,
                     pin: true,
-                    start: !isMobile? 'top +=100' : 'center +=650',
-                    end: !isMobile? 'center +=100' : 'bottom -=1000', // ← Controls scroll distance (can tweak this)
+                    start:  window.innerWidth <= 786 ? 'top +=250' : 'center +=640',
+                    end: window.innerWidth <= 786 ? 'center' : 'bottom -=1000', // ← Controls scroll distance (can tweak this)
                     scrub: true,
-                    
+
 
                     markers: true,
                 })
@@ -76,7 +82,7 @@ const Seo = () => {
 
                     className="xl:col-span-5  px-6 col-span-1 relative flex-col xl:border-r border-white/20 flex"
                 >
-                    <div ref={titleRef} className="relative flex flex-col w-full">
+                    <div ref={titleRef} className="relative  flex flex-col w-full">
                         {phrase3.map((phrases, index) => (
                             <AnimatedText key={index} color={phrases.color}>
                                 {phrases.text}
@@ -84,7 +90,7 @@ const Seo = () => {
                         ))}
                     </div>
 
-                    <div ref={phoneRef} className="xl:min-h-[580px] max-h-[360px]   xl:mt-19 mt-26 xl:border-b border-white/20 xl:px-3 px-1 flex justify-center relative w-full">
+                    <div ref={phoneRef} className="xl:min-h-[580px] max-h-[360px]    xl:mt-19 mt-6 xl:border-b border-white/20 xl:px-3 px-1 flex justify-center relative w-full">
                         <SeoPhone />
                     </div>
                 </div>

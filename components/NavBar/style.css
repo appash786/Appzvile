@@ -1,5 +1,5 @@
 .navbar{
     background-color: #14141486;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
     z-index: 1000;
 }

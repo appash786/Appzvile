@@ -60,7 +60,7 @@ const Project = () => {
 
 
     return (
-        <section id='service' className='w-full xl:h-[90vh] grid xl:grid-cols-10 grid-cols-1 xl:mt-10 mt-15'>
+        <section id='service' className='w-full xl:h-[90vh]   grid xl:grid-cols-10 grid-cols-1 xl:mt-10 mt-15'>
             {/* left section */}
             <div ref={containerLeft} className='xl:col-span-5  px-3 col-span-1 relative flex-col xl:border-r    border-white/20  flex'>
                 <div ref={titleRef} className='relative inline-block w-full'>
@@ -96,13 +96,13 @@ const Project = () => {
             </div> */}
 
             {/* right section */}
-            <div className='col-span-5 flex'>
-                <div className='relative mt-30 border-t   border-white/50  p-5 w-full'>
+            <div className='xl:col-span-5  flex'>
+                <div className='relative mt-30 border-t     border-white/50  p-5 w-full'>
                     <p ref={subtitleRef} className='xl:text-2xl  w-3/4 p-5 blurBg font'>
                        Crafted for performance. Designed to convert.<br />
                     </p>
-                    <div ref={itemsRef} className='min-h-[550px] w-3/4  mt-22  relative'>
-                        <p className='text-2xl text-white/60 '>From the first line of code to the final pixel, every element is engineered for speed, clarity, and impact. Your site won’t just load fast — it’ll deliver a seamless experience that keeps visitors engaged and turns clicks into customers.</p>
+                    <div ref={itemsRef} className='xl:min-h-[550px] xl:w-3/4  xl:mt-22  mt-8 relative'>
+                        <p className='xl:text-2xl text-white/60 '>From the first line of code to the final pixel, every element is engineered for speed, clarity, and impact. Your site won’t just load fast — it’ll deliver a seamless experience that keeps visitors engaged and turns clicks into customers.</p>
                     </div>
                 </div>
             </div>

@@ -25,7 +25,7 @@ const Cta = () => {
 
 
     return (
-        <section id='contact' className='w-full  flex flex-col xl:flex-row  h-[40vh] px-3 xl:justify-between xl:mt-70 mt-10'>
+        <section id='contact' className='w-full  flex flex-col xl:flex-row  xl:h-[40vh] px-3 xl:justify-between xl:mt-70 mt-0'>
             <div className='flex h-full justify-between flex-col '>
                 <div>
                     <AnimatedText>Ready to elevate</AnimatedText>

@@ -26,7 +26,7 @@ export default function RootLayout({
         
         
         <LenisProvider>
-          {/* <NavBar /> */}
+          <NavBar />
           <MouseFollowLight />
           {children}
         </LenisProvider>

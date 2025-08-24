@@ -42,8 +42,8 @@ function Laptop(){
 
         {/* Foreground Content */}
         <div className='absolute z-[12] w-[90%] self-center mt-2 h-6 px-5  navbar  top-0 flex items-center justify-between '>
-          <h4 className='text-[10px] '>Travel</h4>
-          <ul className='flex gap-2 text-[8px] opacity-60'>
+          <h4 className='text-[10px] text-white opacity-60'>Travel</h4>
+          <ul className='flex gap-2 text-[8px] text-white opacity-60'>
             <li>Home</li>
             <li>service</li>
             <li>about</li>
@@ -122,7 +122,7 @@ function Mobile() {
 
   }, []);
   return (
-    <div ref={boxRef} className='xl:w-[300px] w-[200px] group right-0 absolute xl:h-[50vh] h-[30vh] border border-gray-500 p-1 rounded-2xl shadow-lg'>
+    <div ref={boxRef} className='xl:w-[300px] w-[200px] group right-0 absolute xl:h-[50vh] h-[35vh] border border-gray-500 p-1 rounded-2xl shadow-lg'>
       <div className='w-full relative overflow-hidden h-full border-gray-500 flex items-center rounded-xl justify-center bg-cover border'>
 
         {/* Background Image */}
@@ -137,8 +137,8 @@ function Mobile() {
 
         {/* Foreground Content */}
         <div className='absolute z-[12] w-full h-10 px-3  navbar  top-0 flex items-center justify-between '>
-          <h4 className='text-[12px]'>Travel</h4>
-          <MenuIcon size={15}  />
+          <h4 className='text-[12px] text-white opacity-60'>Travel</h4>
+          <MenuIcon size={15} color='white'  />
 
         </div>
         <div className="absolute z-20 p-4  gap-2 inset-0 flex flex-col items-center justify-end mb-12 text-center  text-white">
